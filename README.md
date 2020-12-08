@@ -1,7 +1,7 @@
 # FileMonster
 A module for mass saving and loading of objects in files.
 
-initialize file manager(only need one) - FileMonster()
+initialize file manager(only need one) - variable = FileMonster()
 
 ### FileMonster methods
 ```
@@ -30,3 +30,37 @@ merge(*storages) - merge all storage instances into one
 -All storage instances' contents passed in gets merged into one storage unit and is returned
 ```
 ### Storage methods
+```
+bulkadd(*objects) - adds multiple objects to storage unit
+-upon build adding objects, label for each object will be asked. If label is the same, object gets added to the list corresponding to label
+
+
+add(label, object_) - adds an object into specified label
+
+
+remove_label(label) - specified label and its contents go poof
+
+
+remove_elem(label, pos = 0) - removes certain element from label(each label corresponds to a list which contains its objects)
+
+
+bulkremove(*labels) - there was a bulkadd so why not a bulkremove?
+
+
+clear() - I eat up all storage contents and now its empty
+
+
+showlabels() - shows all storage unit labels
+
+
+showstorage() - literally prints the raw storage out(dictionary)
+
+
+getstorage() - returns raw storage
+
+
+chooseobj(label, pos = 0) - returns an object from specified position from the specified label
+
+
+prettyshow() - shows the storage in a beautiful way with makeup
+```
