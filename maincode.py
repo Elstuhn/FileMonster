@@ -107,7 +107,7 @@ class Storage():
         self.storage = {}
 
     def __str__(self):
-        return "f<Storage Object {self} at "+hex(id(self))+">"
+        return "<Storage Object at "+hex(id(self))+">"
 
     def __repr__(self):
         return self.storage
