@@ -40,7 +40,6 @@ add(label, object_) - adds an object into specified label
 
 remove_label(label) - specified label and its contents go poof
 
-
 remove_elem(label, pos = 0) - removes certain element from label(each label corresponds to a list which contains its objects)
 
 
@@ -63,4 +62,11 @@ chooseobj(label, pos = 0) - returns an object from specified position from the s
 
 
 prettyshow() - shows the storage in a beautiful way with makeup
+```
+
+## Things to note
+```
+*When importing this file, make sure to initiate all classes and functions that are included in the storages
+For example: if your storages includes an instance of class `Test`, initiate class `Test` before loading the storage that includes class `Test`
+*If you want to modify storages, it's better to use IDLE
 ```
