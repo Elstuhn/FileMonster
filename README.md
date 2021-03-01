@@ -66,9 +66,9 @@ prettyshow() - shows the storage in a beautiful way with makeup
 ```
 
 ## Things to note
-⋅__When importing this file, make sure to initiate all classes and functions that are included in the storages__
+**⋅When importing this file, make sure to initiate all classes and functions that are included in the storages**
 
    -For example: if your storages includes an instance of class `Test`, initiate class `Test` before loading a storage that includes class `Test`
   
-⋅__If you want to modify storages, it's better to use IDLE__
-   -You could do `storage.getstorage() = dictionary object` if you're too lazy to modify the storage bit by bit, just make sure that the dictionary object is in the same format as FileMonster's storages. `{'label' : [items]}` for example `{'label': ['hello', 123, ['poop', 'hehe']]}`
+**⋅If you want to modify storages, it's better to use IDLE**
+                                 -You could do `storage.getstorage() = dictionary object` if you're too lazy to modify the storage bit by bit, just make sure that the dictionary object is in the same format as FileMonster's storages. `{'label' : [items]}` for example `{'label': ['hello', 123, ['poop', 'hehe']]}`
