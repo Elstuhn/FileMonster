@@ -66,6 +66,7 @@ prettyshow() - shows the storage in a beautiful way with makeup
 
 ## Things to note
 ⋅When importing this file, make sure to initiate all classes and functions that are included in the storages
+
   For example: if your storages includes an instance of class `Test`, initiate class `Test` before loading the storage that includes class `Test`
   
 ⋅If you want to modify storages, it's better to use IDLE
