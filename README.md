@@ -53,7 +53,7 @@ clear() - I eat up all storage contents and now its empty
 showlabels() - shows all storage unit labels
 
 
-showstorage() - literally prints the raw storage out(dictionary)
+showstorage() - literally prints the raw storage out of dictionary type
 
 
 getstorage() - returns raw storage
@@ -62,7 +62,7 @@ getstorage() - returns raw storage
 chooseobj(label, pos = 0) - returns an object from specified position from the specified label
 
 
-prettyshow() - shows the storage in a beautiful way with makeup
+prettyshow() - shows the storage in a beautiful way 
 ```
 
 ## Things to note
@@ -70,6 +70,6 @@ prettyshow() - shows the storage in a beautiful way with makeup
 
    -For example: if your storages includes an instance of class `Test`, initiate class `Test` before loading a storage that includes class `Test`
   
-**⋅If you want to modify storages, it's better to use IDLE**
+**⋅If you want to modify storages, it's better to use an interpreter**
 
    -You could do `storage.getstorage() = dictionary object` if you're too lazy to modify the storage bit by bit, just make sure that the dictionary object is in the same format as FileMonster's storages. `{'label' : [items]}` for example `{'label': ['hello', 123, ['poop', 'hehe']]}`
