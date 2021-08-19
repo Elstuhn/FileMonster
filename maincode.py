@@ -29,7 +29,7 @@ class FileMonster(defaultdict):
     def save(self, storage):
         for i in fileopened:
             if fileopened[i] == hex(id(storage)):
-                with open(i+".fm", "wb") as file:
+                with open(f"{i}.fm", "wb") as file:
                     pickle.dump(storage, file)
                 return
         raise SystemError("Storage was not found.")
@@ -37,8 +37,8 @@ class FileMonster(defaultdict):
     def createsave(self, storage, filename : str, ask : bool = True):
         if ask:
             try:
-                open(filename+".fm", "r")
-                open(filename+".fm", "r").close()
+                open(f"{filename}.fm", "r")
+                open(f"{filename}.fm", "r").close()
                 _ = input("It looks like you have a file with the same name. Would you like to overwrite it? (Y/N)\n")
             
                 while _.lower() not in ["y", "n"]:
@@ -51,22 +51,22 @@ class FileMonster(defaultdict):
             except:
                 pass
         
-        with open(filename+".fm", 'wb') as file:
+        with open(f"{filename}.fm", 'wb') as file:
             pickle.dump(storage, file)
             
         if ask:
-            print("Saved file in", filename+".fm") 
+            print(f"Saved file in {filename}.fm") 
 
     def load(self, filename : str):
         
         try:
-            open(filename+".fm", "r")
-            open(filename+".fm", "r").close()
+            open(f"{filename}.fm", "r")
+            open(f"{filename}.fm", "r").close()
 
         except:
             raise SystemError(f"Filename '{filename}' does not exist.")
         
-        with open(filename+".fm", 'rb') as read:
+        with open(f"{filename}.fm", 'rb') as read:
             pickled = pickle.load(read)
             fileopened[filename] = hex(id(pickled))
             return pickled
@@ -107,7 +107,7 @@ class Storage():
         self.storage = {}
 
     def __str__(self):
-        return "<Storage Object at "+hex(id(self))+">"
+        return f"<Storage Object at {hex(id(self))}>"
 
     def __repr__(self):
         return self.storage
