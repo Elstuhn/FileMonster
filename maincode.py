@@ -5,9 +5,10 @@ import os
 from collections import defaultdict
 
 fileopened = {}
-'''Notes:
+'''
     Saved files will automatically have a .fm behind indicating that it is a filemonster file
-    When saving/loading files, filename need not have .fm behind (it'll be automatically added))'''
+    When saving/loading files, filename need not have .fm behind (it'll be automatically added))
+'''
 class SystemError(Exception):
     pass
 
@@ -141,7 +142,7 @@ class Storage():
 
         del self.storage[label]
 
-    def remove_elem(self, label : str, pos : int = 0):
+    def removeElem(self, label : str, pos : int = 0):
         try:
             self.storage[label]
         except:
@@ -153,6 +154,17 @@ class Storage():
             raise SystemError("Position is out of range.")
 
         del self.storage[label][pos]
+        
+    def showElems(self, label : str):
+        try:
+            self.storage[label]
+        except:
+            raise SystemError(f"Label {label} was not found.")
+        for i in self.storage[label]:
+            print(f"Position {i}: {self.storage[label][i]}")
+            sleep(0.5)
+       
+            
 
     def bulkremove(self, *labels):
         if not len(labels):
@@ -178,7 +190,7 @@ class Storage():
     def clear(self):
         self.storage = {}
 
-    def showlabels(self):
+    def showLabels(self):
         labels = []
         print("Labels:")
         for keys in self.storage:
@@ -192,7 +204,7 @@ class Storage():
     def getstorage(self):
         return self.storage
     
-    def chooseobj(self, label : str, pos : int = 0):
+    def chooseElem(self, label : str, pos : int = 0):
         try:
             self.storage[label]
         except:
@@ -212,8 +224,8 @@ class Storage():
             print(f"\nLabel {count} : {i}")
             sleep(0.5)
             print("Content:")
-            sleep(1.2)
+            sleep(0.8)
             for z in self.storage[i]:
                 print(z)
             count += 1
-            sleep(1.7)
+            sleep(1)
