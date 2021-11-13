@@ -3,6 +3,7 @@ import pickle
 import typing as t
 import os
 from collections import defaultdict
+from pathlib import Path
 
 fileopened = {}
 '''
@@ -30,16 +31,20 @@ class FileMonster(defaultdict):
     def save(self, storage):
         for i in fileopened:
             if fileopened[i] == hex(id(storage)):
-                with open(f"{i}.fm", "wb") as file:
+                with open(i, "wb") as file:
                     pickle.dump(storage, file)
                 return
         raise SystemError("Storage was not found.")
 
-    def createsave(self, storage, filename : str, ask : bool = True):
+    def createsave(self, storage, filepath : str, ask : bool = True):
+        """
+        filepath can be absolute or relative to current path
+        filepath will need to include filename e.g you want it to be called data, filepath should be C:\Users\test\Downloads\data
+        if ask is enabled(True), there will be confirmation if file exists already, default = True
+        """
+        path = Path(filepath+".fm")
         if ask:
-            try:
-                open(f"{filename}.fm", "r")
-                open(f"{filename}.fm", "r").close()
+            if path.is_file():
                 _ = input("It looks like you have a file with the same name. Would you like to overwrite it? (Y/N)\n")
             
                 while _.lower() not in ["y", "n"]:
@@ -48,28 +53,25 @@ class FileMonster(defaultdict):
                 if _.lower() == "n":
                     print("Operation cancelled.")
                     return
-                
-            except:
-                pass
         
-        with open(f"{filename}.fm", 'wb') as file:
+        with open(path, 'wb') as file:
             pickle.dump(storage, file)
             
         if ask:
-            print(f"Saved file in {filename}.fm") 
+            print(f"Saved file in {filepath}") 
 
-    def load(self, filename : str):
+    def load(self, filepath : str): 
+        """
+        filepath can be absolute or relative to current path
+        file extension required in filepath (.fm)
+        """
+        path = Path(filepath)
+        if not path.is_file():
+            raise SystemError(f"No such file path '{filepath}' exists.")
         
-        try:
-            open(f"{filename}.fm", "r")
-            open(f"{filename}.fm", "r").close()
-
-        except:
-            raise SystemError(f"Filename '{filename}' does not exist.")
-        
-        with open(f"{filename}.fm", 'rb') as read:
+        with open(path, 'rb') as read:
             pickled = pickle.load(read)
-            fileopened[filename] = hex(id(pickled))
+            fileopened[path] = hex(id(pickled))
             return pickled
 
     def showfiles(self):
