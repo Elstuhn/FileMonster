@@ -22,6 +22,7 @@ e.g C:\Users\user\Downloads\userinfo instead of just C:\Users\user\Downloads
 
 load(filepath) - loads storage unit
 -returns specified storage instance object if it exists
+-requires .fm extension to be in filepath
 
 
 showfiles() - prints a column of FileMonster file names
