@@ -14,12 +14,13 @@ save(storage) - saves a storage unit into a textfile
 -storage parameter has to be loaded in before (save is only for saving opened storages, see next for saving new storages)
 
 
-createsave(storage, filename, ask = True) - creates new files for new storages
+createsave(storage, filepath, ask = True) - creates new files for new storages
 -parameter 'ask' is for if a file with the same name as the 'filename' parameter exists,
 it will ask for confirmation to overwrite the file (True = ask, False = don't ask)
+-if you want your saved file to be called "userinfo", filepath will have to include it
+e.g C:\Users\user\Downloads\userinfo instead of just C:\Users\user\Downloads
 
-
-load(filename) - loads storage unit
+load(filepath) - loads storage unit
 -returns specified storage instance object if it exists
 
 
