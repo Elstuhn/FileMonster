@@ -43,7 +43,7 @@ add(label, object_) - adds an object into specified label
 remove_label(label) - specified label and its contents go poof
 
 
-remove_elem(label, pos = 0) - removes certain element from label(each label corresponds to a list which contains its objects)
+removeElem(label, pos = 0) - removes certain element from label(each label corresponds to a list which contains its objects)
 
 
 bulkremove(*labels) - there was a bulkadd so why not a bulkremove?
@@ -52,7 +52,7 @@ bulkremove(*labels) - there was a bulkadd so why not a bulkremove?
 clear() - I eat up all storage contents and now its empty
 
 
-showlabels() - shows all storage unit labels
+showLabels() - shows all storage unit labels
 
 
 showstorage() - literally prints the raw storage out of dictionary type
