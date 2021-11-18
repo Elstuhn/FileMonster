@@ -39,7 +39,7 @@ class FileMonster(defaultdict):
     def createsave(self, storage, filepath : str, ask : bool = True):
         """
         filepath can be absolute or relative to current path
-        filepath will need to include filename e.g you want it to be called data, filepath should be C:\Users\test\Downloads\data
+        filepath will need to include filename e.g you want it to be called data, filepath should be C:/Users/test/Downloads/data
         if ask is enabled(True), there will be confirmation if file exists already, default = True
         """
         path = Path(filepath+".fm")
