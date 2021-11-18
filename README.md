@@ -61,7 +61,7 @@ showstorage() - literally prints the raw storage out of dictionary type
 getstorage() - returns raw storage
 
 
-chooseobj(label, pos = 0) - returns an object from specified position from the specified label
+chooseElem(label, pos = 0) - returns an object from specified position from the specified label
 
 
 prettyshow() - shows the storage in a beautiful way 
