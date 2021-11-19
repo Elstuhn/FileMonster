@@ -45,6 +45,7 @@ remove_label(label) - specified label and its contents go poof
 
 removeElem(label, pos = 0) - removes certain element from label(each label corresponds to a list which contains its objects)
 
+replace(label, newobj, pos = 0) - replaces an element of a label with another object
 
 bulkremove(*labels) - there was a bulkadd so why not a bulkremove?
 
