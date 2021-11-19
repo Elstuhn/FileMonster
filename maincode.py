@@ -166,7 +166,18 @@ class Storage():
             print(f"Position {i}: {self.storage[label][i]}")
             sleep(0.5)
        
-            
+    def replace(self, label : str, pos : int = 0, newobj):
+        try:
+            self.storage[label]
+        except:
+            raise SystemError(f"Label {label} was not found.")
+
+        try:
+            self.storage[label][pos]
+        except:
+            raise SystemError("Position is out of range.")
+        self.storage[label][pos] = newobj
+        
 
     def bulkremove(self, *labels):
         if not len(labels):
