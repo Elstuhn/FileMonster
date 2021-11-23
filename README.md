@@ -37,7 +37,7 @@ bulkadd(*objects) - adds multiple objects to storage unit
 -upon build adding objects, label for each object will be asked. If label is the same, object gets added to the list corresponding to label
 
 
-add(label, object_) - adds an object into specified label
+add(label, object_) - adds an object as an element to a label, if label does not exist, creates the label and assigns object to it
 
 
 remove_label(label) - specified label and its contents go poof
