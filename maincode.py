@@ -166,7 +166,7 @@ class Storage():
             print(f"Position {i}: {self.storage[label][i]}")
             sleep(0.5)
        
-    def replace(self, label : str, pos : int = 0, newobj):
+    def replace(self, newobj, label : str, pos : int = 0):
         try:
             self.storage[label]
         except:
